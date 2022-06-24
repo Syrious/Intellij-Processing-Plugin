@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.syrious.processingintellijplugin</id>
-    <name>Processing-Intellij-Plugin</name>
+    <name>Processing</name>
     <vendor>syrious</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,6 +9,13 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.syrious.processingintellijplugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.syrious.processingintellijplugin.services.MyProjectService"/>
+
+        <fileType
+            name="Pde File"
+            implementationClass="com.github.syrious.processingintellijplugin.PdeFileType"
+            fieldName="INSTANCE"
+            language="PDE"
+            extensions="pde"/>
     </extensions>
 
     <applicationListeners>

@@ -1,3 +1,10 @@
+# WIP
+
+* https://github.com/processing/processing4/blob/master/java/src/processing/mode/java/preproc/JavaLexer.g4
+* https://plugins.jetbrains.com/docs/intellij/prerequisites.html#download-and-install-intellij-idea
+* https://processing.org/
+* https://www.jflex.de/
+
 # Processing-Intellij-Plugin
 
 ![Build](https://github.com/Syrious/Processing-Intellij-Plugin/workflows/Build/badge.svg)
