@@ -35,6 +35,6 @@ public class PdeFileType extends LanguageFileType {
   @Override
   @Nullable
   public Icon getIcon() {
-    return null;
+    return PdeIcons.FILE;
   }
 }
