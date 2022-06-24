@@ -4,6 +4,7 @@
 * https://plugins.jetbrains.com/docs/intellij/prerequisites.html#download-and-install-intellij-idea
 * https://processing.org/
 * https://www.jflex.de/
+* https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin
 
 # Processing-Intellij-Plugin
 
