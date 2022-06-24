@@ -1,5 +1,6 @@
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.ir.backend.js.compile
 
 fun properties(key: String) = project.findProperty(key).toString()
 
@@ -32,6 +33,10 @@ intellij {
 
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
+}
+
+dependencies {
+    compileOnly("org.antlr:antlr4-intellij-adaptor:0.1")
 }
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
