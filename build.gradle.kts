@@ -1,6 +1,5 @@
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.ir.backend.js.compile
 
 fun properties(key: String) = project.findProperty(key).toString()
 
@@ -15,6 +14,8 @@ plugins {
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
     id("org.jetbrains.qodana") version "0.1.13"
+
+    id("antlr")
 }
 
 group = properties("pluginGroup")
@@ -36,6 +37,7 @@ intellij {
 }
 
 dependencies {
+    antlr("org.antlr:antlr4:4.7.2")
     compileOnly("org.antlr:antlr4-intellij-adaptor:0.1")
 }
 
@@ -93,6 +95,14 @@ tasks {
                 getOrNull(properties("pluginVersion")) ?: getLatest()
             }.toHTML()
         })
+    }
+
+    generateGrammarSource {
+        maxHeapSize = "64m"
+        arguments = arguments + listOf("-visitor", "-long-messages", "-package", "com.github.syrious.processingintellijplugin.antlr")
+        //source = fileTree("src/main/java/com.github.syrious.processingintellijplugin.antlr").matching(PatternSet().include("Processing.g4"))
+        //source = fileTree("src/main/java/com/github/syrious/processingintellijplugin/antlr").matching(PatternSet().include("Processing.g4"))
+        source = fileTree("src/main/antlr").matching(PatternSet().include("Processing.g4"))
     }
 
     // Configure UI tests plugin
