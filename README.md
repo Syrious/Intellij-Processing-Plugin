@@ -1,4 +1,8 @@
-# WIP
+# Introduction
+Intellij-Plugin for https://processing.org/
+
+
+# Still Work in Progress
 
 * https://github.com/processing/processing4/blob/master/java/src/processing/mode/java/preproc/JavaLexer.g4
 * https://plugins.jetbrains.com/docs/intellij/prerequisites.html#download-and-install-intellij-idea
