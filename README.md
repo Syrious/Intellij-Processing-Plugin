@@ -4,13 +4,15 @@ Intellij-Plugin for https://processing.org/
 
 # Still Work in Progress
 
+
+* https://github.com/antlr/jetbrains-plugin-sample (use as a starting example)
+* https://github.com/antlr/antlr4-intellij-adaptor
 * https://github.com/processing/processing4/blob/master/java/src/processing/mode/java/preproc/JavaLexer.g4
 * https://plugins.jetbrains.com/docs/intellij/prerequisites.html#download-and-install-intellij-idea
 * https://processing.org/
 * https://www.jflex.de/
 * https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin
 * https://github.com/JetBrains/Grammar-Kit
-* https://github.com/antlr/antlr4-intellij-adaptor
 
 # Processing-Intellij-Plugin
 

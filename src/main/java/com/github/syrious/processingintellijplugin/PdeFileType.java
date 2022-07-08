@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 public class PdeFileType extends LanguageFileType {
+  public static final String FILE_EXTENSION = "pde";
   public static final PdeFileType INSTANCE = new PdeFileType();
 
   protected PdeFileType() {
@@ -29,7 +30,7 @@ public class PdeFileType extends LanguageFileType {
   @Override
   @NotNull
   public String getDefaultExtension() {
-    return "pde";
+    return FILE_EXTENSION;
   }
 
   @Override

@@ -37,9 +37,12 @@ intellij {
 }
 
 dependencies {
-    antlr("org.antlr:antlr4:4.7.2")
-    compileOnly("org.antlr:antlr4-intellij-adaptor:0.1")
+    antlr("org.antlr:antlr4:4.10.1")
+//    antlr("org.antlr:antlr4:4.7.2")
+    implementation("org.antlr:antlr4-intellij-adaptor:0.1")
 }
+
+sourceSets["main"].java.srcDirs("src/main/gen")
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
@@ -97,13 +100,13 @@ tasks {
         })
     }
 
-    generateGrammarSource {
-        maxHeapSize = "64m"
-        arguments = arguments + listOf("-visitor", "-long-messages", "-package", "com.github.syrious.processingintellijplugin.antlr")
-        //source = fileTree("src/main/java/com.github.syrious.processingintellijplugin.antlr").matching(PatternSet().include("Processing.g4"))
-        //source = fileTree("src/main/java/com/github/syrious/processingintellijplugin/antlr").matching(PatternSet().include("Processing.g4"))
-        source = fileTree("src/main/antlr").matching(PatternSet().include("Processing.g4"))
-    }
+//    generateGrammarSource {
+//        maxHeapSize = "64m"
+//        arguments = arguments + listOf("-visitor", "-long-messages", "-package", "com.github.syrious.processingintellijplugin.antlr")
+//        //source = fileTree("src/main/java/com.github.syrious.processingintellijplugin.antlr").matching(PatternSet().include("Processing.g4"))
+//        //source = fileTree("src/main/java/com/github/syrious/processingintellijplugin/antlr").matching(PatternSet().include("Processing.g4"))
+//        source = fileTree("src/main/antlr").matching(PatternSet().include("Processing.g4"))
+//    }
 
     // Configure UI tests plugin
     // Read more: https://github.com/JetBrains/intellij-ui-test-robot
